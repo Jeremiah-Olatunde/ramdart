@@ -15,3 +15,5 @@ R Function(W) Function(V) Function(U) Function(T) curry4<T, U, V, W, R>(
 T Function() always<T>(T t){
     return () => t;
 }
+
+var constant = always;
