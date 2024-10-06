@@ -32,4 +32,15 @@ void main() {
     var alwaysMap = always(<String, int>{"meaningOfLife": 42});
     expect(alwaysMap(), {"meaningOfLife": 42});
   });
+
+  test("flip", () {
+    int sub(int a, int b) => a - b;
+
+    expect(flip(sub)(10, 5), -5);
+    expect(flip(flip(sub))(10, 5), sub(10, 5));
+
+    String mergeWithSpace(String first, String second) => '$first $second';
+
+    expect(flip(mergeWithSpace)("hello", "world"), "world hello");
+  });
 }
