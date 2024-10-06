@@ -17,3 +17,7 @@ T Function() always<T>(T t) {
 }
 
 var constant = always;
+
+R Function(U, T) flip<T, U, R>(R Function(T, U) f) {
+  return (U u, T t) => f(t, u);
+}
