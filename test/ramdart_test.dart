@@ -1,7 +1,6 @@
 import 'package:ramdart/ramdart.dart';
 import 'package:test/test.dart';
 
-
 void main() {
   group('function currying:', () {
     test('(curry2)', () {
@@ -30,7 +29,7 @@ void main() {
     var alwaysHello = always("hello");
     expect(alwaysHello(), "hello");
 
-    var alwaysMap = always(<String, int>{ "meaningOfLife": 42 });
-    expect(alwaysMap(), {  "meaningOfLife": 42  });
+    var alwaysMap = always(<String, int>{"meaningOfLife": 42});
+    expect(alwaysMap(), {"meaningOfLife": 42});
   });
 }
