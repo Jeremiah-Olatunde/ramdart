@@ -11,3 +11,7 @@ R Function(W) Function(V) Function(U) Function(T) curry4<T, U, V, W, R>(
     R Function(T, U, V, W) f) {
   return (T t) => (U u) => (V v) => (W w) => f(t, u, v, w);
 }
+
+T Function() always<T>(T t){
+    return () => t;
+}
