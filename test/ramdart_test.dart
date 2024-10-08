@@ -43,4 +43,24 @@ void main() {
 
     expect(flip(mergeWithSpace)("hello", "world"), "world hello");
   });
+
+  group("adjust", () {
+    test("adjust iterative", () {
+        int double(int x) => x * 2;
+
+        expect(adjust(0, double, [4, 4, 4, 4]), equals([8, 4, 4, 4]));
+        expect(adjust(1, double, [4, 4, 4, 4]), equals([4, 8, 4, 4]));
+        expect(adjust(2, double, [4, 4, 4, 4]), equals([4, 4, 8, 4]));
+        expect(adjust(3, double, [4, 4, 4, 4]), equals([4, 4, 4, 8]));
+    });
+
+    test("adjust recursive", () {
+        int double(int x) => x * 2;
+
+        expect(adjustRecursive(0, double, [4, 4, 4, 4]), equals([8, 4, 4, 4]));
+        expect(adjustRecursive(1, double, [4, 4, 4, 4]), equals([4, 8, 4, 4]));
+        expect(adjustRecursive(2, double, [4, 4, 4, 4]), equals([4, 4, 8, 4]));
+        expect(adjustRecursive(3, double, [4, 4, 4, 4]), equals([4, 4, 4, 8]));
+    });    
+  });
 }
