@@ -26,3 +26,7 @@ T tap<T>(Function(T) f, T t){
   f(t);
   return t;
 }
+
+Iterable<T> times<T>(T Function(int) f, int n){
+  return [ for(int i = 1; i < n + 1; i++) f(i) ];
+}
