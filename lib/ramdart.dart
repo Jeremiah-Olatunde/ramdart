@@ -34,3 +34,10 @@ Iterable<T> times<T>(T Function(int) f, int n){
 Iterable<T> adjust<T>(int n, T Function(T) f, Iterable<T> xs){
   return xs.indexed.map((pair) => pair.$1 == n ? f(pair.$2) : pair.$2);
 }
+
+List<T> adjustRecursive<T>(int n, T Function(T) f, List<T> xs){
+  return switch(xs){
+    [] => [],
+    [T head, ...List<T> rest] => [n == 0 ? f(head) : head] + adjustRecursive(n - 1, f, rest),
+  };
+}
