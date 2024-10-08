@@ -63,4 +63,20 @@ void main() {
         expect(adjustRecursive(3, double, [4, 4, 4, 4]), equals([4, 4, 4, 8]));
     });    
   });
+
+  group("all", () {
+    test("all iterative", () {
+        bool isEven(int x) => x % 2 == 0;
+
+        expect(all(isEven, [2, 4, 6, 8]), true);
+        expect(all(isEven, [2, 4, 6, 8, 9]), false);
+    });
+
+    test("all recursive", () {
+        bool isEven(int x) => x % 2 == 0;
+
+        expect(allRecursive(isEven, [2, 4, 6, 8]), true);
+        expect(allRecursive(isEven, [2, 4, 6, 8, 9]), false);
+    });    
+  });
 }
