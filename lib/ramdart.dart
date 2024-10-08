@@ -45,3 +45,10 @@ List<T> adjustRecursive<T>(int n, T Function(T) f, List<T> xs){
 bool all<T>(bool Function(T) predicate, List<T> xs){
   return xs.every(predicate);
 }
+
+bool allRecursive<T>(bool Function(T) predicate, List<T> xs){
+  return switch(xs){
+    [] => true,
+    [T head, ...List<T> rest] => predicate(head) && allRecursive(predicate, rest),
+  };
+}
