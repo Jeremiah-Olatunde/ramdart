@@ -41,3 +41,7 @@ List<T> adjustRecursive<T>(int n, T Function(T) f, List<T> xs){
     [T head, ...List<T> rest] => [n == 0 ? f(head) : head] + adjustRecursive(n - 1, f, rest),
   };
 }
+
+bool all<T>(bool Function(T) predicate, List<T> xs){
+  return xs.every(predicate);
+}
